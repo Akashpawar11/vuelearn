@@ -3,8 +3,6 @@
         <!-- <img src="../assets/qq.png" height=50 width=50 alt=""> -->
         <a href="/">Home</a>
         <a href="/add">Add Restaurant</a>
-        <!-- <a href="/delete">Delete Restaurant</a> -->
-        <!-- <a href="/update">Update Restaurant</a> --> 
         <a id="logoutBtn" @click="logout" href="">Logout</a>
     </div>
 </template>
@@ -24,7 +22,7 @@ export default {
 
 <style>
 .nav {
-    background-color: rgb(43, 43, 43);
+    background-color: rgb(44, 43, 43);
     min-width: 540px;
     overflow: hidden;
 }
