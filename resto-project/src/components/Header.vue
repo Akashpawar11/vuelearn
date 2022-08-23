@@ -1,8 +1,10 @@
 <template>
     <div class="nav">
+        <!-- <img src="../assets/qq.png" height=50 width=50 alt=""> -->
         <a href="/">Home</a>
-        <a href="">Add Restaurant</a>
-        <a href="">Update Restaurant</a>
+        <a href="/add">Add Restaurant</a>
+        <!-- <a href="/delete">Delete Restaurant</a> -->
+        <!-- <a href="/update">Update Restaurant</a> --> 
         <a id="logoutBtn" @click="logout" href="">Logout</a>
     </div>
 </template>
@@ -40,7 +42,7 @@ export default {
     color: black;
 }
 
-logoutBtn {
+.logoutBtn {
     float: right;
 }
 

@@ -19,6 +19,7 @@ export default {
 body {
   padding: 0;
   margin: 0;
+  background-color: #ffffff;
 }
 
 #app {
@@ -29,7 +30,9 @@ body {
   color: #2c3e50;
 }
 
-.container {
+.container,
+.add ,
+.update{
   margin-top: 40px;
   min-width: 400px;
   width: 40%;

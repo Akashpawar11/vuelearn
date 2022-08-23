@@ -41,6 +41,24 @@
       "email": "a",
       "password": "a",
       "id": 7
+    },
+    {
+      "name": "kk",
+      "email": "kk",
+      "password": "kk",
+      "id": 8
+    },
+    {
+      "name": "q",
+      "email": "q",
+      "password": "q",
+      "id": 9
+    },
+    {
+      "name": "o",
+      "email": "o",
+      "password": "o",
+      "id": 10
     }
   ],
   "Restaurants": [
@@ -51,10 +69,10 @@
       "contact": 88887777
     },
     {
-      "id": 2,
-      "name": "KFC",
-      "address": "Badlapur",
-      "contact": 55556666
+      "name": "asd",
+      "address": "asd",
+      "contact": 123,
+      "id": 2
     }
   ]
 }

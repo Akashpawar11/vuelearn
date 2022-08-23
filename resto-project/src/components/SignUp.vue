@@ -45,7 +45,7 @@ export default {
                 // setTimeout(() => {
                 //     this.$router.push({ name: "Home" })
                 // }, 2000);
-                localStorage.setItem('Users-Info', JSON.stringify(result.data));
+                // localStorage.setItem('Users-Info', JSON.stringify(result.data));
             }
         },
     },

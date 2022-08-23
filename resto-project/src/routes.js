@@ -3,6 +3,7 @@ import SignUp from './components/SignUp.vue';
 import LoginPage from './components/Login.vue';
 import AddResto from './components/Add.vue';
 import UpdateResto from './components/Update.vue';
+import DeleteRestro from './components/Delete.vue'
 
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -30,7 +31,12 @@ const routes = [
     {
         name: 'Update',
         component: UpdateResto,
-        path:'/update'
+        path:'/update/:id'
+    },
+    {
+        name: 'Delete',
+        component: DeleteRestro,
+        path:'/delete/:id'
     }
 ]
 
