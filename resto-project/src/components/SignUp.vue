@@ -9,7 +9,7 @@
         <p>
             <router-link to="/login">Login</router-link>
         </p>
-        <h3 v-show="SignUpSuccess">Sign-up successful !!!</h3>
+        <h1 class="face" v-show="SignUpSuccess">Sign-up successful !!!</h1>
         <h4 v-show="emptyFields">Please provide all details!!!</h4>
     </div>
 </template>
@@ -61,5 +61,37 @@ export default {
 <style scoped>
 h4 {
     color: rgb(211, 25, 25);
+}
+
+.face {
+    color: rgb(0, 174, 0);
+    animation: shake 2s cubic-bezier(.9, .9, .9, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(20px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(20px, 0, 0);
+    }
 }
 </style>

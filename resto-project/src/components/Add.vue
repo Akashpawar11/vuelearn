@@ -1,14 +1,16 @@
 <template>
     <HeaderVue />
-    <h1>Welcome to add restaurant page</h1>
+    <h1>Welcome to add employee page</h1>
     <form class="add">
-        <h3>Add restaurant by providing following details</h3>
+        <h3>Add Employee</h3>
+        <h6>Its quick and easy</h6>
         <input v-model="name" type="text" placeholder="Enter name" name="name">
-        <input v-model="address" type="text" placeholder="Enter address" name="address">
+        <input v-model="role" type="text" placeholder="Enter role" name="role">
+        <input v-model="salary" type="number" placeholder="Enter salary" name="salary">
         <input v-model="contact" type="number" placeholder="Enter contact" name="contact">
-        <button type="button" @click="addRestaurant">Add Restaurant</button>
+        <button type="button" @click="addEmployee">Add Employee</button>
         <h4 v-show="emptyFields">Please provide all details!!!</h4>
-        <h3 v-show="addSuccess">Restaurant added!!!</h3>
+        <h1 v-show="addSuccess" class="face">Employee added!!!</h1>
     </form>
 
 </template>
@@ -22,7 +24,8 @@ export default {
     data() {
         return {
             name: '',
-            address: '',
+            role: '',
+            salary: '',
             contact: '',
             emptyFields: false,
             addSuccess: false
@@ -32,27 +35,30 @@ export default {
         HeaderVue
     },
     methods: {
-        async addRestaurant() {
-            let result = await axios.post("http://localhost:3000/restaurants",
-                {
-                    name: this.name,
-                    address: this.address,
-                    contact: this.contact
-                }
-            );
-            if (this.name == '' || this.address == '' || this.contact == '') {
+        async addEmployee() {
+
+            if (this.name == '' || this.role == '' || this.salary == '' || this.contact == '') {
                 this.emptyFields = true;
                 console.log('Please provide all details');
-            } else
+            } else {
+                const result = await axios.post("http://localhost:3000/Employees",
+                    {
+                        name: this.name,
+                        role: this.role,
+                        salary: this.salary,
+                        contact: this.contact
+                    }
+                );
                 if (result.status == 201) {
-                    this.name = '', this.address = '', this.contact = '', this.addSuccess = true,
+                    this.name = '', this.role = '', this.salary = '', this.contact = '', this.addSuccess = true,
                         setTimeout(() => {
                             this.$router.push({ name: 'Home' })
                         }, 2000);
                 }
+            }
             // alert("Button working")
         }
-    },
+    }
     // mounted() {
     //     let user = localStorage.getItem('Users-Info');
     //     if (!user) {
@@ -64,10 +70,40 @@ export default {
 
 <style scoped>
 h3 {
-    /* margin-left: auto; */
-    /* margin-right: auto; */
     text-align: center;
-    width: 70%;
-    margin: 30px auto;
+    width: 100%;
+    margin: 31px 0 0 0;
+}
+
+.face {
+    color: rgb(0, 174, 0);
+    animation: shake 2s cubic-bezier(.9, .9, .9, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(20px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(20px, 0, 0);
+    }
 }
 </style>

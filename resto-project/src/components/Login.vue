@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <img src="../assets/resto.jpg" alt="">
+        <h1 id="Title">EMPLOYEES<br>MANAGEMENT<br>SYSTEM</h1>
         <h1>Login</h1>
         <input type="text" v-model="email" placeholder="Enter email-ID" required>
         <input type="password" v-model="password" placeholder="Enter Password" required>
@@ -52,5 +52,13 @@ export default {
 <style>
 .container a {
     color: rgb(53, 41, 37);
+}
+
+#title {
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-text-stroke: 1px black;
+
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+  <div class="bg"></div>
 
   <router-view />
   <!-- <HomePage /> -->
@@ -11,6 +12,7 @@
 export default {
   name: 'App',
   components: {
+    // HomePage
   }
 }
 </script>
@@ -19,20 +21,41 @@ export default {
 body {
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  /* background-color: #ffffff; */
+  background-image: url(./assets/office2.jpg);
+  background-size: cover;
+  backdrop-filter: blur(2px);
 }
 
+h1 {
+  padding: 5px 24px;
+  border-radius: 9px;
+  border: 1px solid white;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #00000061;
+}
+
+h2{
+  
+  padding: 5px 24px;
+  background-color: #00000061;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #ffffff;
+  height: 100%;
 }
 
 .container,
-.add ,
-.update{
+.add,
+.update {
   margin-top: 40px;
   min-width: 400px;
   width: 40%;
@@ -42,7 +65,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(135deg, rgb(255 255 255 / 28%), rgb(247 247 247 / 17%));
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -97,5 +120,9 @@ button:focus {
 
 button:active {
   transform: scale(0.95);
+}
+
+::selection {
+  background-color: rgb(255, 228, 55);
 }
 </style>

@@ -59,19 +59,51 @@
       "email": "o",
       "password": "o",
       "id": 10
-    }
-  ],
-  "Restaurants": [
-    {
-      "id": 1,
-      "name": "Dominos",
-      "address": "Ambernath",
-      "contact": 88887777
     },
     {
-      "name": "asd",
-      "address": "asd",
-      "contact": 123,
+      "name": "tim",
+      "email": "david",
+      "password": "555555",
+      "id": 11
+    },
+    {
+      "name": "SuryaKumar Yadav",
+      "email": "SKY@bcci.com",
+      "password": "sky1",
+      "id": 12
+    },
+    {
+      "name": "fg",
+      "email": "eegd",
+      "password": "dfg",
+      "id": 13
+    },
+    {
+      "name": "lihuolk",
+      "email": "jklhk",
+      "password": "kmjhg",
+      "id": 14
+    },
+    {
+      "name": "a",
+      "email": "a",
+      "password": "a",
+      "id": 15
+    }
+  ],
+  "Employees": [
+    {
+      "name": "harry",
+      "role": "pottera",
+      "salary": 800000,
+      "contact": 260000582,
+      "id": 1
+    },
+    {
+      "name": "fghfgh",
+      "role": "gfhfg",
+      "salary": 3424,
+      "contact": "",
       "id": 2
     }
   ]

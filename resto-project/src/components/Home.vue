@@ -1,21 +1,22 @@
 <template>
     <HeaderVue />
     <h1>Welcome to home page</h1>
-    <hr>
-    <h2>List Of Restaurants</h2>
+    <h2>List Of Employees</h2>
 
     <table>
-        <tr>
+        <tr id="headTr">
             <th>ID</th>
             <th>Name</th>
-            <th>Address</th>
+            <th>Role</th>
+            <th>Salary</th>
             <th>Contact</th>
             <th>Actions</th>
         </tr>
-        <tr v-for="item in restaurants" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.address }}</td>
+        <tr v-for="item in employees" :key="item.id">
+            <td id="idTd">{{ item.id }}</td>
+            <td id="nameTd">{{ item.name }}</td>
+            <td>{{ item.role }}</td>
+            <td>{{ item.salary }}</td>
             <td>{{ item.contact }}</td>
             <td class="actionsTd">
                 <router-link :to="/update/ + item.id">
@@ -35,7 +36,7 @@ export default {
     name: 'HomePage',
     data() {
         return {
-            restaurants: []
+            employees: []
         }
     },
     components: {
@@ -46,14 +47,14 @@ export default {
         if (!user) {
             this.$router.push({ name: "LoginPage" })
         }
-        let result = await axios.get("http://localhost:3000/restaurants");
+        let result = await axios.get("http://localhost:3000/Employees");
         console.table(result.data)
-        this.restaurants = result.data
+        this.employees = result.data
     },
     methods: {
-       async removeData(id) {
+        async removeData(id) {
             console.warn(id)
-            let result = await axios.delete("http://localhost:3000/restaurants/" + id);
+            let result = await axios.delete("http://localhost:3000/Employees/" + id);
             if (result.status == 200) {
                 this.$router.push({ name: "LoginPage" })
             }
@@ -72,13 +73,29 @@ table {
 table,
 td,
 th {
-    border: 1px solid black;
+    border: 1px solid white;
     border-collapse: collapse;
+    background-color: #00000047;
+
 }
 
 td,
 th {
     padding: 10px;
+}
+
+#headTr {
+    color: rgb(255 221 0 / 98%);
+    background-color: #f3f3f37d;
+
+}
+
+#idTd {
+    background-color: rgb(0 174 0 / 22%);
+}
+
+#nameTd {
+    background-color: rgb(255 40 40 / 22%);
 }
 
 a {
@@ -93,7 +110,7 @@ a {
     width: 37%;
     color: transparent;
     text-align: center;
-    text-shadow: 0 0 0 green;
+    text-shadow: 0 0 0 #21cb21;
 }
 
 #removeIcon {
